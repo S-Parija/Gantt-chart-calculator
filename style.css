@@ -1,0 +1,229 @@
+:root {
+    /* Light Mode Colors */
+    --background-color: #f3f3f3;
+    --text-color: #333;
+    --card-background: #fff;
+    --border-color: #ccc;
+    --button-background: #4CAF50;
+    --button-hover: #45a049;
+    --error-color: red;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 20px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    position: relative; /* For positioning the toggle button */
+}
+
+.dark-mode {
+    /* Dark Mode Colors */
+    --background-color: #121212;
+    --text-color: #09617e; /* Light blue text color */
+    --card-background: #513502;
+    --border-color: #c51010;
+    --button-background: #3a3a3a;
+    --button-hover: #5a5a5a;
+    --error-color: #ff5252;
+}
+
+h1 {
+    text-align: center;
+    color: var(--text-color);
+}
+
+h4 {
+    text-align: center;
+    color: var(--text-color);
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 20px;
+}
+
+.card {
+    padding: 20px;
+    background-color: var(--card-background);
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, border 0.3s ease;
+}
+
+.input-box {
+    max-width: 300px;
+    margin-right: 20px;
+}
+
+.output-box {
+    max-width:fit-content;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    color: var(--text-color);
+}
+
+input[type="number"],
+input[type="text"],
+select {
+    width: 100%;
+    padding: 10px;
+    border: 3px solid var(--border-color);
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-bottom: 15px;
+    transition: border-color 0.3s ease;
+}
+
+button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: var(--button-background);
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: var(--button-hover);
+}
+
+.error {
+    color: var(--error-color);
+    margin-top: 10px;
+}
+
+h2 {
+    margin-top: 20px;
+    color: var(--text-color);
+}
+
+#ganttChart {
+    margin-top: 20px;
+    background-color: var(--card-background);
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    border: 1px solid var(--border-color);
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background-color: var(--card-background);
+    color: var(--text-color);
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9; /* Light grey for even rows */
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #ffffff; /* White for odd rows */
+}
+
+tbody tr:hover {
+    background-color: #f1f1f1; /* Highlight on hover */
+}
+
+/* Toggle Button Styles */
+#themeToggle {
+    position: absolute; /* Position it in the corner */
+    top: 20px; /* Adjust as necessary */
+    right: 20px; /* Adjust as necessary */
+    width: 40px; /* Make it round */
+    height: 40px; /* Make it round */
+    background-color: var(--button-background);
+    color: #fff;
+    border: none;
+    border-radius: 50%; /* Make it round */
+    cursor: pointer;
+    font-size: 20px; /* Increase font size for icon */
+    transition: background-color 0.3s ease;
+}
+
+#themeToggle:hover {
+    background-color: var(--button-hover);
+}
+
+/* Media Queries for Mobile Devices */
+@media screen and (max-width: 768px) {
+    .input-box, .output-box {
+        max-width: 100%;
+    }
+
+    table {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    h1 {
+        font-size: 24px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    .input-box, .output-box {
+        padding: 10px;
+    }
+
+    input[type="number"],
+    input[type="text"],
+    select {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    button {
+        padding: 8px;
+        font-size: 14px;
+    }
+}
+
+
+
+/* Toggle Button Styles */
+#themeToggle {
+    position: absolute; /* Position it in the corner */
+    top: 20px; /* Adjust as necessary */
+    right: 20px; /* Adjust as necessary */
+    width: 40px; /* Make it round */
+    height: 40px; /* Make it round */
+    background-color: var(--button-background);
+    color: #fff;
+    border: none;
+    border-radius: 50%; /* Make it round */
+    cursor: pointer;
+    font-size: 20px; /* Increase font size for icon */
+    transition: background-color 0.3s ease;
+    z-index: 1000; /* Ensure it stays above other elements */
+}
+
+#themeToggle:hover {
+    background-color: var(--button-hover);
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gantt Chart Generator</title>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Gantt Chart Generator</h1>
+    <h4>Easy to use Gantt Chart Generator. Light and Dark Mode available</h4>
+    
+    <div class="container">
+        <div class="input-box">
+            <h2>Gantt Chart: Input</h2>
+            <label for="processes">Number of Processes:</label>
+            <input type="number" id="processes" name="processes">
+
+            <label for="arrivalTimes">Arrival Times (comma-separated):</label>
+            <input type="text" id="arrivalTimes" name="arrivalTimes">
+
+            <label for="burstTimes">Burst Times (comma-separated):</label>
+            <input type="text" id="burstTimes" name="burstTimes">
+
+            <div id="priorityContainer" style="display: none;">
+                <label for="priorities">Priorities (comma-separated, lower number means higher priority, always start with 1):</label>
+                <input type="text" id="priorities" name="priorities">
+            </div>
+
+            <label for="algorithm">Scheduling Algorithm:</label>
+            <select id="algorithm" name="algorithm" onchange="togglePriorityInput()">
+                <option value="FCFS">First Come First Serve (FCFS)</option>
+                <option value="SJF">Shortest Job First (SJF)</option>
+                <option value="RR">Round Robin (RR)</option>
+                <option value="Non-Preemptive Priority">Non-Preemptive Priority Scheduling</option>
+                <option value="Preemptive Priority">Preemptive Priority Scheduling</option>
+                <option value="SRTF">Shortest Remaining Time First (SRTF)</option>
+            </select>
+
+            <div id="timeQuantumContainer" style="display: none;">
+                <label for="timeQuantum">Time Quantum (for RR):</label>
+                <input type="number" id="timeQuantum" name="timeQuantum" min="1">
+            </div>
+
+            <button onclick="generateGanttChart()">Generate Gantt Chart</button>
+        </div>
+
+        <div class="output-box">
+            <h2>Gantt Chart: Output</h2>
+            <button id="themeToggle" onclick="toggleTheme()">🌙</button>
+            <div id="ganttChart"></div>
+            <div id="errorMessages" class="error"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
